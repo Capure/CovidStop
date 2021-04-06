@@ -121,4 +121,15 @@ export default {
 .data {
     font-size: 24px;
 }
+
+@media (max-width: 500px) {
+    .title {
+        margin-left: 20px;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    .data {
+        font-size: 18px;
+    }
+}
 </style>
