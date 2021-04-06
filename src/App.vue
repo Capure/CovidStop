@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header/>
+  <ToggleMode @toggled="(newValue) => {this.global = newValue}" />
+  <DisplayData :global="global" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DisplayData from './components/DisplayData.vue';
+import Header from './components/Header.vue';
+import ToggleMode from './components/ToggleMode.vue';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      global: true
+    }
+  },
   components: {
-    HelloWorld
+    Header,
+    ToggleMode,
+    DisplayData
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #000;
+  color: white;
 }
 </style>
